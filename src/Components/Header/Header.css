@@ -1,0 +1,28 @@
+.header {
+  background-color: #ff7844;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar ul li {
+  margin: 0px 18px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+}
