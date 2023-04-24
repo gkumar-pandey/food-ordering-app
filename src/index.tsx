@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { MenuProvider } from './Context/MenuContext/menu-context';
+import { CartContextProvider } from './Context/CartContext/CartContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <MenuProvider>
-        <App />
+        <CartContextProvider>
+          <App />
+        </CartContextProvider>
       </MenuProvider>
     </BrowserRouter>
   </React.StrictMode>

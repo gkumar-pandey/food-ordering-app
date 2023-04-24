@@ -2,8 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Header.css'
 import Container from '../Container/Container'
+import { useCart } from '../../Context/CartContext/CartContext'
 
 const Header = () => {
+
+    const { cart } = useCart()
     return (
         <div className='header' >
             <Container>
@@ -19,7 +22,7 @@ const Header = () => {
                             <NavLink className='nav-link' to={'/menu'} >Menu</NavLink>
                         </li>
                         <li>
-                            <NavLink className='nav-link' to={'/cart'} >Cart</NavLink>
+                            <NavLink className='nav-link' to={'/cart'} >Cart({cart.length})  </NavLink>
                         </li>
                     </ul>
                 </nav>

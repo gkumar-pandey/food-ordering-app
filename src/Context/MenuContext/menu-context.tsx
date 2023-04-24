@@ -1,5 +1,6 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import { fakeFetch } from "../../Api/api";
+import getSearchMenu from "../../utils/getSearchMenu";
 
 
 
@@ -8,6 +9,7 @@ export const menuContext = createContext<any | undefined>(undefined);
 
 export const MenuProvider = ({ children }: any) => {
     const [menu, setMenu] = useState([])
+    const [filteredMenu, setFilteredMenu] = useState([])
 
     const fetchData = async () => {
         const url = 'https://example.com/api/menu';
@@ -24,7 +26,13 @@ export const MenuProvider = ({ children }: any) => {
     useEffect(() => {
         fetchData()
     }, [])
-    return <menuContext.Provider value={{ menu }} >
+
+    const searchByUserInput = (e: any) => {
+        const searhQuery = e.target.value;
+        setFilteredMenu(getSearchMenu(menu, searhQuery))
+    }
+
+    return <menuContext.Provider value={{ menu, filteredMenu, setFilteredMenu, searchByUserInput }} >
         {children}
     </menuContext.Provider>
 }
