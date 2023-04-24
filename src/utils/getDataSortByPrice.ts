@@ -1,4 +1,4 @@
-const sortByPrice = (data: any, sortBy: any) => {
+const getDataSortByPrice = (data: any, sortBy: any) => {
   if (sortBy === "PRICE_LOW_TO_HIGH") {
     return data.sort((a: any, b: any) => a.price - b.price);
   }
@@ -10,4 +10,4 @@ const sortByPrice = (data: any, sortBy: any) => {
   return data;
 };
 
-export default sortByPrice;
+export default getDataSortByPrice;
