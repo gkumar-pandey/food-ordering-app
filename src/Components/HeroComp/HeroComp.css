@@ -37,3 +37,9 @@
   color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+@media screen and (max-width: 768px) {
+  .hero-text {
+    width: 100%;
+  }
+}

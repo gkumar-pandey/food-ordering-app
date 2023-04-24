@@ -2,7 +2,7 @@ import React from 'react'
 
 const Heading = ({ title }: any) => {
     return (
-        <h2 style={{ fontSize: '1.9rem', textAlign: 'center' }} >{title}</h2>
+        <h2 style={{ fontSize: '1.9rem', textAlign: 'center', margin: '1rem 0' }} >{title}</h2>
     )
 }
 

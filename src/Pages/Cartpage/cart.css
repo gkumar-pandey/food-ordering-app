@@ -1,0 +1,15 @@
+.cart-details h3 {
+  margin: 0.5rem;
+}
+
+.cart-details button {
+  padding: 8px 10px;
+  margin: 0.5rem;
+  background-color: green;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
