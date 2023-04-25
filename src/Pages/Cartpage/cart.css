@@ -13,3 +13,23 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.cart-details button:disabled {
+  opacity: 0.5;
+}
+
+.empty-cart-msg {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 8px;
+  font-family: sans-serif;
+}
+.empty-cart-msg p {
+  padding: 5px;
+  font-size: 1.4rem;
+}
+
+.empty-cart-msg .menu-btn {
+  background-color: #ff7844;
+  color: #fff;
+}

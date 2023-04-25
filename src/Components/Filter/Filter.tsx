@@ -1,6 +1,5 @@
 
 import { useMenu } from '../../Context/MenuContext/menu-context';
-import Heading from '../Heading/Heading';
 import './filter.css'
 
 const Filter = () => {

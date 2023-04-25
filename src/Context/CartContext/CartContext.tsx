@@ -20,7 +20,7 @@ export const CartContextProvider = ({ children }: any) => {
 
         const totalPrice = cart.reduce((acc: any, curr: any) => acc + curr.price, 0);
 
-        if (isApplyCoupon) {
+        if (isApplyCoupon && cart.length > 0) {
             let price = totalPrice - 5
             setTotalPrice(price)
             return
@@ -38,7 +38,7 @@ export const CartContextProvider = ({ children }: any) => {
         priceHandler()
     }, [cart, isApplyCoupon])
 
-    return <cartContext.Provider value={{ cart, addToCart, removeFromCartById, totalDeliveryTime, totalPrice, applyCouponHandler }} >
+    return <cartContext.Provider value={{ cart, addToCart, removeFromCartById, totalDeliveryTime, totalPrice, applyCouponHandler, isApplyCoupon }} >
         {children}
     </cartContext.Provider>
 }
