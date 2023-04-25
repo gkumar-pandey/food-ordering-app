@@ -7,30 +7,25 @@ import './cart.css'
 import { useState } from "react";
 
 const Cartpage = () => {
-    const { cart } = useCart();
-
-    const [isApplyCoupon, setIsApplyCoupon] = useState(false)
-    const dileveryTime = cart.reduce(
-        (acc: any, curr: any) => acc + curr.delivery_time,
-        0
-    );
+    const { cart, totalDeliveryTime, totalPrice, applyCouponHandler, setIsApplyCoupon } = useCart();
 
 
-    const totalPrice = cart.reduce((acc: any, curr: any) => acc + curr.price, 0);
+
+
+
     return (
         <div>
             <Container>
                 <Heading title='Cart' />
                 <div className="cart-details" >
-                    <h3>Total Delivery Time : {dileveryTime}</h3>
-                    {
-                        isApplyCoupon ? <h3>Total Price : Rs.{totalPrice - 5} </h3> : <h3>Total Price : Rs. {totalPrice}</h3>
-                    }
-                    <button onClick={() => setIsApplyCoupon(true)} >Apply coupon</button>
+                    <h3>Total Delivery Time : {totalDeliveryTime} minutes</h3>
+                    <h3>Total Price: Rs.{totalPrice}</h3>
+                    <button onClick={applyCouponHandler} >Apply coupon</button>
                 </div>
                 <GridContainer>
-                    {cart.map((menu: object) => (
-                        <FoodCard {...menu} />
+                    {cart.map((menu: any) => (
+
+                        <FoodCard key={menu.id} {...menu} />
                     ))}
                 </GridContainer>
             </Container>
